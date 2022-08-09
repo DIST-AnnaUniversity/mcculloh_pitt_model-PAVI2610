@@ -1,0 +1,107 @@
+AND
+#McCulloh Pitt model for AND model
+#import the packages
+import numpy as np
+#defining the functions
+def McAnd(x,w,t):
+#finding the net value
+    net = np.dot(x,w)
+    if net>t:
+        output = 1
+    else:
+        output = 0
+    return output
+#defining the inputs and weight and the inputs are given in array
+x0 = np.array([0,0,1])
+x1 = np.array([0,1,1])
+x2 = np.array([1,0,1])
+x3 = np.array([1,1,1])
+x4 = np.array([0,1,1])
+w = np.array([1,-1,1])
+#t is initialised to 0
+t=0
+#the funcion is passed with the parameters.
+p1 = McAnd(x0,w,t)
+print (x0, "value", p1)
+p2 = McAnd(x1,w,t)
+print (x1, "value", p2)
+p3 = McAnd(x2,w,t)
+print (x2, "value", p3)
+p4 = McAnd(x3,w,t)
+print (x3, "value", p4)
+p5 = McAnd(x4,w,t)
+print (x4, "value", p5)
+
+OUTPUT:
+[0 0 1] value 1
+[0 1 1] value 0
+[1 0 1] value 1
+[1 1 1] value 1
+[0 1 1] value 0
+-----------------------------------------------------------------
+OR:
+#McCulloh Pitt model for OR model
+#import the packagesimport numpy as np
+def McOR(x,w,t):
+#finding the net value
+    net = np.dot(x,w)
+    if net>t:
+        output = 1
+    else:
+        output = 0
+    return output
+#defining the inputs and weight and the inputs are given in array
+x0 = np.array([0,0,1])
+x1 = np.array([0,1,1])
+x2 = np.array([1,0,1])
+x3 = np.array([1,1,1])
+x4 = np.array([1,1,0])
+w = np.array([5,-4,-4])
+#t is initialised to 0
+t = 0
+#the funcion is passed with the parameters.
+p1 = McOR(x0,w,t)
+print (x0, "value", p1)
+p2 = McOR(x1,w,t)
+print (x1, "value", p2)
+p3 = McOR(x2,w,t)
+print (x2, "value", p3)
+p4 = McOR(x3,w,t)
+print (x3, "value", p4)
+p5 = McOR(x3,w,t)
+print (x4, "value", p5)
+
+OUTPUT:
+[0 0 1] value 0
+[0 1 1] value 0
+[1 0 1] value 1
+[1 1 1] value 0
+[1 1 0] value 0
+------------------------------------------------------------------------
+NOT
+#McCulloh Pitt model for NOT model
+#import the packages
+import numpy as np
+#finding the net value
+def McNOT(x,w,t):
+    net = np.dot(x,w)
+    if net>t:
+        output = 1
+    else:
+        output = 0
+    return output
+#defining the inputs and weight and the inputs are given in array
+x0 = np.array([0,1])
+x1 = np.array([1,1])
+w = np.array([1,1])
+#t is initialised to 0
+t = 0 
+#the funcion is passed with the parameters.
+p1 = McNOT(x0,w,t)
+print (x0, "value", p1)
+p2 = McNOT(x1,w,t)
+print (x1, "value", p2)
+
+OUTPUT:
+[0 1] value 1
+[1 1] value 1
